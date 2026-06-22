@@ -1,0 +1,22 @@
+name: wrf-vs-ai
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - python=3.10
+  - numpy
+  - pandas
+  - xarray
+  - netCDF4
+  - scipy
+  - matplotlib
+  - cartopy
+  - eccodes
+  - cfgrib
+  - pip
+  - pip:
+      - wrf-python
+      - cdsapi
+      - ai-models
+      - ai-models-fuxi
+      - graphcast  # see https://github.com/google-deepmind/graphcast for install
