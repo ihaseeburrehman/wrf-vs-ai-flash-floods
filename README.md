@@ -105,3 +105,15 @@ MIT License — see [LICENSE](LICENSE).
 **Haseeb ur Rehman**  
 PhD Researcher, University of Luxembourg  
 haseeb.rehman@uni.lu
+
+## Revision (GMD referee round 1)
+
+Scripts added during revision in response to referee comments:
+
+| Script | Purpose |
+|---|---|
+| `02_observation_preprocessing/isd_precip_fixed_rv1.py` | Period-aware NOAA ISD precipitation extraction. Replaces an earlier routine that summed overlapping ISD accumulation reports. |
+| `06_verification_statistics/build_obs_rv1.py` | Builds the independent verification network: excludes stations co-located with assimilated SYNOP reports and stations with insufficient 6-hourly coverage. |
+| `06_verification_statistics/build_cache_rv1.py` | Matched forecast-observation pairs, including WRF before and after assimilation. |
+| `06_verification_statistics/stats_rv1_final.py` | Categorical and continuous scores, threshold sensitivity, bootstrap confidence intervals, flood-day-only verification. |
+| `05_radar_processing/resolution_and_fss_rv2.py` | Fractions Skill Score against the RADFLOOD21 radar composite, and the 12/4/1.33 km resolution experiment. |

@@ -1,3 +1,23 @@
+"""
+DEPRECATED -- DO NOT USE FOR PRECIPITATION.
+
+This script was used for the first submission. Its 6-hourly precipitation
+aggregation is incorrect: it parses the NOAA ISD accumulation period into
+`Precip_Period` but then discards it, and sums every AA-field report falling in
+each 6-hour window. Because ISD reports overlapping accumulation periods
+(1, 3, 6, 12 or a running 24 h) in the same field, this double-counts. At
+stations that report a running 24-hour total every hour the resulting totals
+were inflated by up to a factor of 70.
+
+It is retained here only so that the processing behind the original submission
+remains inspectable.
+
+Use isd_precip_fixed_rv1.py instead, which selects reports according to their
+stated accumulation period.
+
+The temperature, humidity and wind extraction in this script is unaffected.
+"""
+
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 """
