@@ -116,4 +116,8 @@ Scripts added during revision in response to referee comments:
 | `06_verification_statistics/build_obs_rv1.py` | Builds the independent verification network: excludes stations co-located with assimilated SYNOP reports and stations with insufficient 6-hourly coverage. |
 | `06_verification_statistics/build_cache_rv1.py` | Matched forecast-observation pairs, including WRF before and after assimilation. |
 | `06_verification_statistics/stats_rv1_final.py` | Categorical and continuous scores, threshold sensitivity, bootstrap confidence intervals, flood-day-only verification. |
+| `02_observation_preprocessing/rebuild_2018_obs.sh` | Regenerates the 2018 assimilation observations from the NCEP PREPBUFR archive. The little_r conversion originally used for that event silently discarded every surface report type; this pipeline restores them and rebuilds all 124 analysis cycles. |
+| `02_observation_preprocessing/merge_ztd.py` | Appends GNSS ZTD reports to an OBSPROC ob.ascii file and corrects the TOTAL and GPSZD header counts, preserving the fixed-width layout WRFDA expects. |
+| `03_wrf_rapid_cycle/extract_stations_hpc.py` | Extracts station time series from wrfout files on the HPC after the 2018 re-run. |
+| `06_verification_statistics/stats_rv2_final.py` | As `stats_rv1_final.py`, recomputed on the corrected 2018 assimilated run (`merged_pairs_rv2.csv`). Produces the scores reported in the revised manuscript. |
 | `05_radar_processing/resolution_and_fss_rv2.py` | Fractions Skill Score against the RADFLOOD21 radar composite, and the 12/4/1.33 km resolution experiment. |
